@@ -18,4 +18,6 @@ pipeline {
               steps {
                 sh ' docker build -t ow1:v /ws '
             }
+            
         }
+    }
