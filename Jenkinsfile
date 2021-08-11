@@ -14,5 +14,9 @@ pipeline {
                 sh ' mvn clean install'
             }
         }
+        stage('docker build') {
+              steps {
+                sh ' docker build -t ow1:v /home/pfsu/ws'
+ 
     }
 }
