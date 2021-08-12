@@ -16,12 +16,12 @@ pipeline {
         }*/
         stage('docker build') {
               steps {
-                sh ' docker build -t ow1:v2 . '
-                sh "docker  tag ow1:v2 registry.hub.docker.com/${user}/ow1:v2"
+                sh ' docker build -t ow1:v3 . '
+                sh "docker  tag ow1:v3 registry.hub.docker.com/${user}/ow1:v3"
                 withCredentials([usernamePassword(credentialsId: 'Neelakanta.hub', passwordVariable: 'pw', usernameVariable: 'user')]) {
-		 //sh "docker  tag ow1:v2 registry.hub.docker.com/${user}/ow1:v2"
+		 //sh "docker  tag ow1:v3 registry.hub.docker.com/${user}/ow1:v3"
 		sh "docker login -u ${user} -p ${pw} https://registry.hub.docker.com"
-                sh "docker push registry.hub.docker.com/${user}/ow1:v2"               
+                sh "docker push registry.hub.docker.com/${user}/ow1:v3"               
              
 				}
             
