@@ -17,9 +17,10 @@ pipeline {
         stage('docker build') {
               steps {
                 sh ' docker build -t ow1:v1 . '
-                 
+                sh ' docker push neelakantareddivari/ow1:v1 '
             }
             
     }
 }
+        
 }
