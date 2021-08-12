@@ -17,7 +17,7 @@ pipeline {
         stage('docker build') {
               steps {
                 sh ' docker build -t ow1:v1 . '
-                sh ' docker push tag ow1:v1 neelakantareddivari/ow1:v1 '
+                sh ' docker  tag ow1:v1 neelakantareddivari/ow1:v1 '
             }
             
     }
