@@ -19,7 +19,7 @@ pipeline {
                 sh ' docker build -t ow1:v1 . '
                 sh ' docker  tag ow1:v1 neelakantareddivari/ow1:v1 '
                 withCredentials([usernamePassword(credentialsId: 'Neelakanta.hub', passwordVariable: 'pw', usernameVariable: 'user')]) {
-		sh "docker login -u ${user} -p ${pw} https://registry.hub.docker.com"
+		sh "docker login -u ${user} -p ${pw} https://nexus.idea.xpaas.io"
                 sh ' docker push neelakantareddivari/ow1:v '                
              
 				}
