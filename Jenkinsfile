@@ -16,9 +16,10 @@ pipeline {
         }*/
         stage('docker build') {
               steps {
-                sh ' docker build -t ow1:v . '
+                sh ' docker build -t ow1:v1 . '
+                 
             }
             
-        }
+        1
     }
 }
