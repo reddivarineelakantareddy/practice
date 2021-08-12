@@ -17,14 +17,14 @@ pipeline {
         stage('docker build') {
               steps {
                 sh ' docker build -t ow1:v1 . '
-                sh ' docker  tag ow1:v1 neelakantareddivari/ow1:v1 '
+                sh " docker  tag ow1:v1 registry.hub.docker.com/${user}/neelakantareddivari/ow1:v1 "
                 withCredentials([usernamePassword(credentialsId: 'Neelakanta.hub', passwordVariable: 'pw', usernameVariable: 'user')]) {
 		sh "docker login -u ${user} -p ${pw} https://registry.hub.docker.com"
-                sh ' docker push neelakantareddivari/ow1:v '                
+                sh "docker push  registry.hub.docker.com/${user}/ow1:v"               
              
 				}
             
-            
+          
        
     }
 }
