@@ -9,11 +9,11 @@ pipeline {
                 
             }
         }
-          stage('mvn build') {
+         /* stage('mvn build') {
               steps {
                 sh ' mvn clean install'
             }
-        }
+        }*/
         stage('docker build') {
               steps {
                 sh ' docker build -t ow1:v . '
