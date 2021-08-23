@@ -32,6 +32,7 @@ pipeline {
                      kubernetesDeploy(
                             configs: 'pod.yaml',
 		             kubeconfigId: 'kubernetes_configuration_kubeconfig',
+			     sh "kubectl get pods"
 	   )
     }
 	    }
