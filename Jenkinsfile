@@ -24,12 +24,12 @@ pipeline {
                 sh "docker push registry.hub.docker.com/${user}/ow1:v3"               
              
 				}
-       stage('Deploy Application in k8s Cluster')
+        stage('Deploy Application in k8s Cluster'){ 
            kubernetesDeploy(
                 configs: 'pod.yaml',
 		kubeconfigId: 'kubernetes_configuration_kubeconfig',
 		enableConfigSubstitution: true
-	   ){
+	   )
     }
 }
         
