@@ -26,6 +26,12 @@ pipeline {
 	}
   
 }
-	}        
+	}     
+	    stage('Deploy Application in k8s Cluster'){ 
+           kubernetesDeploy(
+                configs: 'pod.yaml',
+		kubeconfigId: 'kubernetes_configuration_kubeconfig',
+	   )
+    }
     }	    
 }
