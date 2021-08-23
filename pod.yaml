@@ -8,7 +8,7 @@ spec:
   containers:
     - name: web
       image: neelakantareddivari/ow2:V1
-      ports:
-        - name: web
-          containerPort: 80
-          protocol: TCP
+      
+       
+       
+    
