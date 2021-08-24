@@ -33,8 +33,8 @@ pipeline {
 			    sh """
 			    export KUBECONFIG=\${config}
 			    kubectl get pods
+			    kubectl apply -f pod.yaml
 			    """
-		   sh "kubectl apply -f pod.yaml"
 	   
     }
 	    }
