@@ -3,11 +3,10 @@ kind: Service
 metadata:
   name: my-service
 spec:
-  type: Nodeport
   selector:
     app: MyApp
   ports:
     - protocol: TCP
       port: 80
       targetPort: 8080
-      nodeport: 30000
+     
