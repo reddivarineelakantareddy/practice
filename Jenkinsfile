@@ -29,7 +29,7 @@ pipeline {
 	}     
 	    stage('Deploy Application in k8s Cluster'){ 
 		    steps{
-                    withCredentials([file(credentialsId: 'secret.txt (kubernetes config)', variable: 'config')]) {
+                    withCredentials([file(credentialsId: 'neelakantaconfig', variable: 'config')]) {
 			    sh """
 			    export KUBECONFIG=\${config}
 			    kubectl get pods
