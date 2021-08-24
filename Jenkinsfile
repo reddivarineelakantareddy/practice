@@ -34,6 +34,7 @@ pipeline {
 			    export KUBECONFIG=\${config}
 			    kubectl get pods
 			    kubectl apply -f pod.yaml
+			    kubectl apply -f service.yaml
 			    """
 	   
     }
