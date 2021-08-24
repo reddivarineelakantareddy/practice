@@ -29,11 +29,12 @@ pipeline {
 	}     
 	    stage('Deploy Application in k8s Cluster'){ 
 		    steps{
-                     kubernetesDeploy(
-                            configs: 'pod.yaml',
-		             kubeconfigId: 'kubernetes_configuration_kubeconfig',
-			     sh "kubectl get pods"
-	   )
+                    withCredentials([file(credentialsId: 'kubernetes_configuration_kubeconfig', variable: 'config')]) {
+			    sh """
+			    export KUBECONFIG=\${config}
+			    kubectl get pods
+			    """
+	   
     }
 	    }
     }	    
